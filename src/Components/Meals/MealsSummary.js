@@ -3,9 +3,9 @@ import Card from '../UI/Card'
 
 function MealsSummary(props) {
     return (
-        <Fragment >
+        <section >
         <Card width='200' >
-            <h1>Delicious Food, Delivered To You</h1>
+            <h2>Delicious Food, Delivered To You</h2>
             <p>
                 Choose your favorite meal from our broad selection of available meals
                 and enjoy a delicious lunch or dinner at home.
@@ -15,7 +15,7 @@ function MealsSummary(props) {
                 of course by experienced chefs!
             </p>
         </Card>
-        </Fragment>
+        </section>
 
     )
 }
