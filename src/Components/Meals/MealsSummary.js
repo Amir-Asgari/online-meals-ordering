@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Card from '../UI/Card'
 
 function MealsSummary(props) {

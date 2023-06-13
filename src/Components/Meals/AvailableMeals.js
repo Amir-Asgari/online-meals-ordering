@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../UI/Card'
+import MealItem from './MealItem/MealItem';
 
 const Dummy_meals = [
     {
@@ -17,12 +18,13 @@ const Dummy_meals = [
 ]
 function AvailableMeals() {
 
-    const Meals = Dummy_meals.map((meal, index) => (
-        <div >
-            <li>{meal.name}</li>
-            <li>{meal.description}</li>
-            <li>{meal.price}</li>
-        </div>
+    const Meals = Dummy_meals.map((meal) => (
+        <MealItem
+            key={meal.id}
+            name={meal.name}
+            description={meal.description}
+            price={meal.price}
+        />
     ))
     console.log(Meals);
     return (
