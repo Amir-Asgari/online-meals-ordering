@@ -35,5 +35,4 @@ function AvailableMeals() {
         </section>
     )
 }
-
-export default AvailableMeals
+export default AvailableMeals;

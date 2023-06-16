@@ -21,4 +21,4 @@ function MealItemForm() {
     )
 }
 
-export default MealItemForm
+export default MealItemForm;
