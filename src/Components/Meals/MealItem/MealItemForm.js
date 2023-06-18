@@ -4,7 +4,7 @@ import Input from '../../UI/Input'
 
 function MealItemForm() {
     return (
-        <form className={classes.form} autocomplete="on">
+        <form className={classes.form} >
             <Input label='Amount' input={{
                 id: 'amount',
                 type: 'number',
