@@ -19,6 +19,8 @@ function App() {
       <main>
         <Meals />
       </main>
+
+      
     </Fragment>
   );
 }
