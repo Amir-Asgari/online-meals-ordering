@@ -30,7 +30,7 @@ function AvailableMeals() {
     return (
         <section >
             <Card >
-                <ul>{Meals} </ul>
+                <ul style={{with:'20rem'}}>{Meals} </ul>
             </Card>
         </section>
     )

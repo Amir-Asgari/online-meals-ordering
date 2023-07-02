@@ -1,34 +1,10 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-
-
+import classes from './Card.module.css'
 
 const Card = (props) => {
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                justifyContent: "center",
-                marginTop: '-200px',
-                marginBottom: '200px',
-                flexWrap: 'wrap',
-                '& > :not(style)': {
-                    m: 1,
-                    width: "90%",
-                    height: "100%",
-                    borderRadius: "10px",
-                    maxWidth: 550,
-                    zIndex: 50,
-                    padding: '20px',
-                },
-            }}
-        >
-            <Paper>
-                {props.children}
-            </Paper>
-        </Box>
-    );
+        <div className={classes.card}> {props.children}</div>
+    )
 }
 export default Card;

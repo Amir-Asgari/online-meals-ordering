@@ -1,10 +1,11 @@
 import React from 'react'
 import Card from '../UI/Card'
+import classes from './MealsSummary.module.css'
 
 function MealsSummary(props) {
     return (
         <section >
-        <Card width='200' >
+        <div className={classes.card}  >
             <h2>Delicious Food, Delivered To You</h2>
             <p>
                 Choose your favorite meal from our broad selection of available meals
@@ -14,7 +15,7 @@ function MealsSummary(props) {
                 All our meals are cooked with high-quality ingredients, just-in-time and
                 of course by experienced chefs!
             </p>
-        </Card>
+        </div>
         </section>
 
     )
