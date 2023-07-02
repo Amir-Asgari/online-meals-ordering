@@ -1,8 +1,16 @@
+.section{
+  position: relative;
+  margin-top: -10rem;
+  z-index: 100;
+}
+
 .card {
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 14px;
-    background-color: white;
-    max-width: 50rem;
-    margin: 4px auto;
-  }
+  padding: 1rem;
+
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: rgb(44, 44, 44);
+  max-width: 35rem;
+  margin: 4px auto;
+}
