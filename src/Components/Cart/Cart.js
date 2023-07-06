@@ -10,6 +10,8 @@ const Cart = (props) => {
             ))}
         </ul>
     );
+
+    
     return (
         <Modal onclose={props.onclose}>
             {cartItem}
