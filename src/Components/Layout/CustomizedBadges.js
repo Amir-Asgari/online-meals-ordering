@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext,useState } from 'react';
 import Badge from '@mui/material/Badge';
 import Stack from '@mui/material/Stack';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -22,14 +22,17 @@ export default function CustomizedBadges() {
   const CartCtx = useContext(CartContext)
 
   const numberOfCartItems = CartCtx.items.reduce((curNumber, item) => {
-    return curNumber + item.amount
+    return curNumber + item.amount;
   }, 0);
-
+console.log(CartCtx.items);
+console.log(numberOfCartItems);
+console.log(typeof (numberOfCartItems));
+const number = 0;
   return (
     <Stack spacing={1} direction="row">
       <ThemeProvider theme={theme}>
 
-        <Badge badgeContent={numberOfCartItems} color="red">
+        <Badge badgeContent={number} color="red">
           <ShoppingCartIcon color="dark" />
         </Badge>
       </ThemeProvider>
