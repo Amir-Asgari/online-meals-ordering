@@ -36,7 +36,7 @@ function MealItemForm(props) {
                 }}
             />
             <button> + add</button>
-            {!amountIsValid && <p style={{ color: "red" }}>please enter a valid number (1-5).</p>}
+            {!amountIsValid && <p style={{ color: "red" }}>please enter a valid amount (1-5).</p>}
         </form>
     )
 }

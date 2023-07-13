@@ -9,7 +9,6 @@ import CartContext from '../../store/cart-context';
 const theme = createTheme({
   palette: {
     dark: {
-      // This is green.A700 as hex.
       main: '#ccc',
     },
     red: {
@@ -24,9 +23,7 @@ export default function CustomizedBadges() {
   const numberOfCartItems = CartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.amount;
   }, 0);
-console.log(CartCtx.items);
-console.log(numberOfCartItems);
-console.log(typeof (numberOfCartItems));
+
 
   return (
     <Stack spacing={1} direction="row">
