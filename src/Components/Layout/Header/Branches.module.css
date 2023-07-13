@@ -1,0 +1,17 @@
+.branch {
+    text-align: center;
+}
+
+.store-locations {
+    list-style: none;
+    padding: 0;
+}
+
+.store-locations li {
+    padding: 10px;
+    transition: font-size 0.3s ease-out;
+}
+
+.store-locations li:hover {
+    font-size: 18px;
+}

@@ -31,7 +31,6 @@ console.log(typeof (numberOfCartItems));
   return (
     <Stack spacing={1} direction="row">
       <ThemeProvider theme={theme}>
-
         <Badge badgeContent={numberOfCartItems} showZero color="red">
           <ShoppingCartIcon color="dark" />
         </Badge>

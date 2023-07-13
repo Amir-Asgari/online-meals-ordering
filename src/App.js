@@ -3,6 +3,7 @@ import Header from "./Components/Layout/Header";
 import Meals from "./Components/Meals/Meals";
 import Cart from './../src/Components/Cart/Cart'
 import CartProvider from "./store/CartProvider";
+import AboutUs from "./Components/Layout/Header/AboutUs";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false)
@@ -20,6 +21,7 @@ function App() {
       <main>
         <Meals />
       </main>
+      <AboutUs/>
     </CartProvider>
   );
 }
