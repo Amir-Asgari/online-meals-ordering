@@ -27,7 +27,7 @@ export default function CustomButton (props) {
  
  useEffect(() => {
    if(items.length===0){
-    return
+    return;
    }
  setBtnHighlighted(true);
  const timer =setTimeout(()=>{
@@ -35,7 +35,7 @@ export default function CustomButton (props) {
  },300);
  return ()=>{
   clearTimeout(timer)
- }
+ };
  }, [items])
  
   return (
