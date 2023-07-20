@@ -31,27 +31,27 @@ const Dummy_meals = [
 
 function AvailableMeals() {
   const [meals, setMeals] = useState([]);
-  useEffect(() => {
-    const fetchMeals = async () => {
-      const response = await fetch(
-        "https://react-http-6b4a6.firebase.com/meals.json"
-      );
-      const responseData = await response.json();
+//   useEffect(() => {
+//     const fetchMeals = async () => {
+//       const response = await fetch(
+//         "https://react-http-6b4a6.firebase.com/meals.json"
+//       );
+//       const responseData = await response.json();
 
-      const loadedMeals = [];
+//       const loadedMeals = [];
 
-      for (const key in responseData) {
-        loadedMeals.push({
-          id: key,
-          name: responseData[key].name,
-          description: responseData[key].description,
-          price: responseData[key].price,
-        });
-      }
-      setMeals(loadedMeals);
-    };
-    fetchMeals();
-  }, []);
+//       for (const key in responseData) {
+//         loadedMeals.push({
+//           id: key,
+//           name: responseData[key].name,
+//           description: responseData[key].description,
+//           price: responseData[key].price,
+//         });
+//       }
+//       setMeals(loadedMeals);
+//     };
+//     fetchMeals();
+//   }, []);
 
   const Meals = Dummy_meals.map((meal) => (
     <MealItem
