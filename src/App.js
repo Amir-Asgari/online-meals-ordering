@@ -23,8 +23,6 @@ function App() {
       </main>
       <AboutUs/>
     </CartProvider>
-
-    
   );
 }
 
