@@ -27,7 +27,6 @@ function AvailableMeals() {
             price={meal.price}
         />
     ))
-    console.log(Meals);
     return (
         <section >
             <Card >

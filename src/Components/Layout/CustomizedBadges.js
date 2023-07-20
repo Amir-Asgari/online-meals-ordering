@@ -3,6 +3,7 @@ import Badge from '@mui/material/Badge';
 import Stack from '@mui/material/Stack';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CartContext from '../../store/cart-context';
 
@@ -26,7 +27,7 @@ export default function CustomizedBadges() {
 
 
   return (
-    <Stack spacing={1} direction="row">
+    <Stack spacing={1} direction="row" >
       <ThemeProvider theme={theme}>
         <Badge badgeContent={numberOfCartItems} showZero color="red">
           <ShoppingCartIcon color="dark" />
