@@ -4,7 +4,7 @@
  + SPA "with react router dom"
 + info page for products
 + state management with useReducer Hook and Context Api
-+ RTL webSite
++ LTR webSite
  + > Favorite Page
  + > Add , Delete , Delete All Favorite products
 + > Filter Based on category
