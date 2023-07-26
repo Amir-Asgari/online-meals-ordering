@@ -1,8 +1,8 @@
 # online-meals-ordering
 
 #Feature
- + SPA "with react-router-dom"
-+ info page for products
++ SPA with "react-router-dom"
++ page info for products
 + State management with useReducer Hook and Context API
 + LTR webSite
 + Full Responsive on All Devices,
