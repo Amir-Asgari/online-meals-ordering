@@ -3,6 +3,7 @@
 #Feature
 + SPA with "react-router-dom"
 + page info for products
++ CSS Module
 + State management with useReducer Hook and Context API
 + LTR webSite
 + Full Responsive on All Devices,
