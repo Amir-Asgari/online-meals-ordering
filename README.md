@@ -1,18 +1,18 @@
 # online-meals-ordering
 
 #Feature
- + SPA "with react router dom"
+ + SPA "with react-router-dom"
 + info page for products
-+ state management with useReducer Hook and Context Api
++ State management with useReducer Hook and Context API
 + LTR webSite
  + > Favorite Page (Coming Soon)
- + > Add , Delete , Delete All Favorite products (Coming Soon)
+ + > Add, Delete, Delete All Favorite products (Coming Soon)
 + > Filter Based on category (Coming Soon)
 + > Filter Based on Products Name (Coming Soon)
-+ Full Responsive in All Device
++ Full Responsive on All Devices,
 +‌ Basket shopping
 + Add, Delete, Clear Basket, Decrease, Increase, Product in Basket
-+ Show Number of products In Badge
++ Show the Number of products On the Badge
 + calculation Total Price
 + Shipping cost calculation
 + > Offer Code (Coming Soon)
