@@ -10,7 +10,6 @@
 + > Filter Based on category (Coming Soon)
 + > Filter Based on Products Name (Coming Soon)
 + Full Responsive in All Device
-
 +‌ Basket shopping
 + Add, Delete, Clear Basket, Decrease, Increase, Product in Basket
 + Show Number of products In Badge
