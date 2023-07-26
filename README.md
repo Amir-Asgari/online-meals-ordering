@@ -10,8 +10,8 @@
 + > Filter Based on category (Coming Soon)
 + > Filter Based on Products Name (Coming Soon)
 + Full Responsive on All Devices,
-+‌ Basket shopping
 + Add, Delete, Clear Basket, Decrease, Increase, Product in Basket
++ Basket shopping
 + Show the Number of products On the Badge
 + calculation Total Price
 + Shipping cost calculation
