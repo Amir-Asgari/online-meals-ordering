@@ -22,7 +22,7 @@
 Run
 Clone the project
 ```
-https://github.com/mohammadyousefvand/Alarm-clock-react.git
+https://github.com/Amir-Asgari/online-meals-ordering.git
 ```
 Go to the project directory
 
