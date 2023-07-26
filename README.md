@@ -25,14 +25,19 @@ Clone the project
 https://github.com/mohammadyousefvand/Alarm-clock-react.git
 ```
 Go to the project directory
+
 ```
-cd Alarm-clock-react
+cd online-meals-ordering
 ```
+
 Install dependencies
+
 ```
 npm install
 ```
+
 Start the server
+
 ```
 npm start
 ```
