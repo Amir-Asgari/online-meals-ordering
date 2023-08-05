@@ -8,8 +8,15 @@
   width: 90%;
   max-width: 45rem;
   margin: 4px auto;
+  transition: transform 1s ease-in-out 1s;
+  animation: card-enter 1s ease-in-out forwards;
+}
 
-
-  /* transform: translateX(-50%);
-  transition: transform 1s ease-in-out; */
+@keyframes card-enter {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(5%);
+  }
 }

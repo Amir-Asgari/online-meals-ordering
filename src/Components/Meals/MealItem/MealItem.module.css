@@ -8,18 +8,8 @@
   padding-right: 10%;
   border-bottom: 1px solid #ccc;
 }
-@media (max-width :790px) {
- .meal{
-  width: auto;
-  padding-right: 10%;
- } 
-}
 
-@media (max-width :590px) {
-  .meal{
-   width: auto;
-  } 
- }
+
 
 
 .meal h3 {
@@ -36,3 +26,35 @@
   color: #ad5502;
   font-size: 1.25rem;
 }
+
+@media (max-width :790px) {
+  .meal{
+   width: auto;
+   padding-right: 10%;
+   font-size: small;
+   margin-left: -1rem;
+   margin-right: -1rem;
+  } 
+  .meal h3 {
+   font-size: small;
+ }
+ .price {
+   font-size: 0.7rem;
+ }
+ }
+
+ @media (max-width :590px) {
+  .meal{
+   width: auto;
+  font-size: smaller;
+  } 
+  .meal h3 {
+    font-size: smaller;
+  }
+  .description {
+    font-size:10px;
+  }
+  .price {
+    font-size: 0.7rem;
+  }
+ }

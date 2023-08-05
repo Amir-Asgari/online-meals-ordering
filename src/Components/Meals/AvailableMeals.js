@@ -65,7 +65,7 @@ function AvailableMeals() {
   return (
     <section>
       <Card>
-        <ul style={{ with: "20rem" }}>{Meals} </ul>
+        <ul style={{ with: "90%"}}>{Meals} </ul>
       </Card>
     </section>
   );

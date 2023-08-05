@@ -2,8 +2,18 @@
   position: relative;
   margin-top: -10rem;
   z-index: 100;
+  transition: transform 1s ease-in-out ;
+  animation: Section-enter 1s ease-in-out forwards;
 }
 
+@keyframes Section-enter {
+  0% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(5%);
+  }
+}
 .card {
   padding: 1rem;
   color: white;
@@ -13,6 +23,7 @@
   max-width: 35rem;
   margin: 4px auto;
 }
+
 
 @media (max-width :790px) {
   .card{
