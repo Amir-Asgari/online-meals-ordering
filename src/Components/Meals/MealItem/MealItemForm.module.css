@@ -11,12 +11,15 @@
     padding: 0.25rem 2rem;
     border-radius: 20px;
     font-weight: bold;
+    font-size: 12px;
+    transition: all 0.1s ease-in-out;
   }
   
   .form button:hover,
   .form button:active {
     background-color: #641e03;
     border-color: #641e03;
+    font-size: 14px;
   }
 
   @media (max-width :590px) {

@@ -10,8 +10,6 @@
 }
 
 
-
-
 .meal h3 {
   margin: 0 0 0.25rem 0;
 }
@@ -26,7 +24,22 @@
   color: #ad5502;
   font-size: 1.25rem;
 }
-
+.imageItems{
+  margin-right: -100px;
+}
+.image{
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out  ;
+}
+.image:hover{
+  scale: 120%;
+  border-radius: 5px;
+}
 @media (max-width :790px) {
   .meal{
    width: auto;
@@ -41,6 +54,9 @@
  .price {
    font-size: 0.7rem;
  }
+ .imageItems{
+  margin-right: -50px;
+}
  }
 
  @media (max-width :590px) {
@@ -57,4 +73,12 @@
   .price {
     font-size: 0.7rem;
   }
+  .imageItems{
+    margin-right: -20px;
+  }
+  .image{
+    width: 60px;
+    height: 60px;
+  }
  }
+ 
