@@ -11,6 +11,13 @@
   margin: 0 0 0.5rem 0;
   color: #363636;
 }
+.imageItems{
+  margin-right: -200px;
+}
+.image{
+width: 80px;
+height: 80px;
+}
 
 .summary {
   width: 10rem;
@@ -37,12 +44,25 @@
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .actions {
     flex-direction: row;
   }
+  .imageItems{
+    margin-right: -21%;
+  }
 }
 
+@media (max-width: 560px) {
+  .imageItems{
+    margin-right: -2%;
+  }
+}
+@media  (max-width : 470px){
+  .imageItems{
+    display: none;
+  }
+}
 .cart-item button {
   font: inherit;
   font-weight: bold;
