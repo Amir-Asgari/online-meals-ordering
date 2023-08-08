@@ -55,6 +55,7 @@ function AvailableMeals() {
           name: responseData[key].name,
           description: responseData[key].description,
           price: responseData[key].price,
+          image : responseData[key].image
         });
       }
       setMeals(loadedMeals);

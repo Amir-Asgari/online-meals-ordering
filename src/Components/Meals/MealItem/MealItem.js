@@ -19,7 +19,7 @@ const MealItem = (props) => {
   return (
     <li className={classes.meal}>
       <div className={classes.imageItems}>
-        <img className={classes.image} src={props.image} />
+        <img className={classes.image} src={props.image}  alt={props.name}/>
       </div>
       <div>
         <h3>{props.name}</h3>
