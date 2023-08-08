@@ -40,13 +40,15 @@ import past from "../../Assets/pasta.jpg";
 
 function AvailableMeals() {
   const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
         "https://react-http-23a17-default-rtdb.firebaseio.com/meals.json"
       );
       const responseData = await response.json();
-        console.log(responseData);
+      console.log(responseData);
       const loadedMeals = [];
 
       for (const key in responseData) {
@@ -55,10 +57,11 @@ function AvailableMeals() {
           name: responseData[key].name,
           description: responseData[key].description,
           price: responseData[key].price,
-          image : responseData[key].image
+          image: responseData[key].image,
         });
       }
       setMeals(loadedMeals);
+      setIsLoading(false)
     };
     fetchMeals();
   }, []);
@@ -76,7 +79,11 @@ function AvailableMeals() {
   return (
     <section>
       <Card>
-        <ul style={{ with: "90%" }}>{Meals} </ul>
+        {isLoading ? (
+          <h3> is Loading ... </h3>
+        ) : (
+          <ul style={{ with: "90%" }}>{Meals} </ul>
+        )}
       </Card>
     </section>
   );
