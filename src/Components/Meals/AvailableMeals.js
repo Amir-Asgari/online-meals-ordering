@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
+import classes from './AvailbleMeals.module.css'
 
 // import sushi from "../../Assets/sushi.jpg";
 // import pasta from "../../Assets/pasta.jpg";
@@ -83,13 +84,13 @@ function AvailableMeals() {
   }, []);
 
 
-  if (httpError) {
-    return (
-      <section>
-        <p>{httpError}</p>
-      </section>
-    )
-  }
+  // if (httpError) {
+  //   return (
+  //     <section>
+  //       <p>{httpError}</p>
+  //     </section>
+  //   )
+  // }
 
   const Meals = meals.map((meal) => (
     <MealItem
@@ -111,7 +112,11 @@ function AvailableMeals() {
         ) : (
           <ul style={{ with: "90%" }}>{Meals} </ul>
         )}
-
+        {httpError ? (
+          <div className={classes.httpError}> {httpError} </div>
+        ) : (
+          null
+        )}
 
       </Card>
     </section>
