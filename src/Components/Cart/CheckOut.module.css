@@ -1,0 +1,27 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    padding: 15px;
+    border: black solid 1px;
+    border-radius: 5px;
+}
+.section div{
+    padding: 3px;
+}
+
+
+.section div input {
+    width: 200px;
+}
+.section button {
+    display: flex;
+    width: 70px;
+    height: 30px;
+    background-color: aqua;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding-top: 5px;
+}

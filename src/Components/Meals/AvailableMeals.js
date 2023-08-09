@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
-import classes from './AvailbleMeals.module.css'
+import classes from './AvailableMeals.module.css'
 
 // import sushi from "../../Assets/sushi.jpg";
 // import pasta from "../../Assets/pasta.jpg";
