@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 
-import sushi from "../../Assets/sushi.jpg";
-import pasta from "../../Assets/pasta.jpg";
-import fish from "../../Assets/fish-and-chips.jpg";
-import past from "../../Assets/pasta.jpg";
+// import sushi from "../../Assets/sushi.jpg";
+// import pasta from "../../Assets/pasta.jpg";
+// import fish from "../../Assets/fish-and-chips.jpg";
+// import past from "../../Assets/pasta.jpg";
 
 // const Dummy_meals = [
 //   {
@@ -41,14 +41,20 @@ import past from "../../Assets/pasta.jpg";
 function AvailableMeals() {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState(null)
 
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
         "https://react-http-23a17-default-rtdb.firebaseio.com/meals.json"
       );
+
+      if (!response.ok) {
+        throw new Error('something went wrong');
+      }
+
       const responseData = await response.json();
-      console.log(responseData);
+
       const loadedMeals = [];
 
       for (const key in responseData) {
@@ -63,8 +69,27 @@ function AvailableMeals() {
       setMeals(loadedMeals);
       setIsLoading(false)
     };
-    fetchMeals();
+
+    fetchMeals().catch((error) => {
+      setIsLoading(false);
+      setHttpError(error.message);
+    })
+    // try {
+    //   fetchMeals();
+    // } catch (error) {
+    //   setIsLoading(false)
+    //   setHttpError(error.massage)
+    // }
   }, []);
+
+
+  if (httpError) {
+    return (
+      <section>
+        <p>{httpError}</p>
+      </section>
+    )
+  }
 
   const Meals = meals.map((meal) => (
     <MealItem
@@ -76,14 +101,18 @@ function AvailableMeals() {
       image={meal.image}
     />
   ));
+
   return (
     <section>
       <Card>
+
         {isLoading ? (
           <h3> is Loading ... </h3>
         ) : (
           <ul style={{ with: "90%" }}>{Meals} </ul>
         )}
+
+
       </Card>
     </section>
   );
