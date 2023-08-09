@@ -107,7 +107,7 @@ function AvailableMeals() {
     <section>
       <Card>
 
-        {isLoading ? (
+        {isLoading && !httpError ? (
           <h3> is Loading ... </h3>
         ) : (
           <ul style={{ with: "90%" }}>{Meals} </ul>
