@@ -1,27 +1,35 @@
 import React from "react";
 import classes from "./CheckOut.module.css";
 
-const CheckOut = () => {
+const CheckOut = (props) => {
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault()
+  }
+
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <section className={classes.section}>
         <div className={classes.name}>
-          <input id="name" type="text" />
+          <input placeholder="your name" id="name" type="text" />
           <label htmlFor="name"> your name</label>
         </div>
         <div className={classes.name}>
-          <input id="street" type="text" />
+          <input placeholder="street" id="street" type="text" />
           <label htmlFor="street"> street</label>
         </div>
         <div className={classes.name}>
-          <input id="city" type="text" />
+          <input placeholder="city" id="city" type="text" />
           <label htmlFor="city"> city</label>
         </div>
         <div className={classes.name}>
-          <input id="postal-code" type="number" />
+          <input placeholder="postal code" id="postal-code" type="number" />
           <label htmlFor="postal-code"> postal code</label>
         </div>
-        <button > submit</button>
+        <div className={classes.buttons}> 
+          <button onClick={props.onCancel} className={classes.cancelButton}> cancel</button>
+          <button className={classes.submitButton} > submit</button>
+        </div>
       </section>
     </form>
   );

@@ -82,8 +82,6 @@ function AvailableMeals() {
     //   setHttpError(error.massage)
     // }
   }, []);
-
-
   // if (httpError) {
   //   return (
   //     <section>
