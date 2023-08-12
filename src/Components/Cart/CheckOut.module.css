@@ -14,14 +14,39 @@
 .section div input {
     width: 200px;
 }
-.section button {
+.submitButton {
     display: flex;
     width: 70px;
     height: 30px;
-    background-color: aqua;
+    background-color: #8a2b06;
+    color: white;
     text-align: center;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
-    padding-top: 5px;
+    border-radius: 25px;
+
+    padding: 0.5rem 2rem;
+}
+
+.submitButton:hover{
+    background-color: #5a1a01;
+
+}
+
+.cancelButton{
+    background-color: transparent;
+    border-color: #8a2b06;
+    color: #8a2b06;
+    border-radius: 25px;
+    width: 70px;
+    height: 30px;
+}
+.cancelButton:hover{
+    background-color: #8a2b06;
+    color: white;
+}
+.buttons{
+    display: flex;
+    margin-top: 5px;
+    flex-direction: row;
 }
