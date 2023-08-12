@@ -50,3 +50,9 @@
     margin-top: 5px;
     flex-direction: row;
 }
+
+.error {
+    color: red;
+    margin: 1px;
+    font-weight: bold;
+}
