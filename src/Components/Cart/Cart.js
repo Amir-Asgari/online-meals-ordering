@@ -22,6 +22,16 @@ const Cart = (props) => {
         cartCtx.addItem({ ...item, amount: 1 })
     };
 
+    const submitOrderHandler = (userData) => {
+        console.log(userData);
+        fetch('https://react-http-23a17-default-rtdb.firebaseio.com/orders.json', {
+            method: "POST",
+            body: JSON.stringify({
+                user: userData,
+                orderedItems: cartCtx.items
+            })
+        })
+    }
     const cartItem = (
         <ul className={classes['cart-items']}>
             {cartCtx.items.map((item) => (
@@ -49,8 +59,8 @@ const Cart = (props) => {
                 <span>Total Amount</span>
                 <span>{totalAmount}</span>
             </div>
-            {!hasItems && <h3 style={{color:"red"}} >There is no item to order</h3>}
-            {isOrdering && hasItems && <CheckOut onCancel={props.onCloseCart}/>}
+            {!hasItems && <h3 style={{ color: "red" }} >There is no item to order</h3>}
+            {isOrdering && hasItems && <CheckOut onConfirm={submitOrderHandler} onCancel={props.onCloseCart} />}
             {!isOrdering && (
                 <div className={classes.actions}>
                     <button className={classes['button--alt']} onClick={props.onCloseCart}>Close</button>
