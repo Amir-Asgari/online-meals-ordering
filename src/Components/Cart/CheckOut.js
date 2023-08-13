@@ -29,12 +29,6 @@ const CheckOut = (props) => {
     const enteredValidStreet = !isEmpty(enterStreet);
     const enteredValidCity = !isEmpty(enterCity);
     const enteredValidPostalCode = !isFiveChars(enterPostalCode);
-    console.log(
-      enteredValidName,
-      enteredValidStreet,
-      enteredValidCity,
-      enteredValidPostalCode
-    );
 
     const formISValid =
       enteredValidName &&
@@ -49,7 +43,7 @@ const CheckOut = (props) => {
       postalCode: enteredValidPostalCode,
     });
 
-    if (formISValid) {
+    if (!formISValid) {
       return;
     }
   };
