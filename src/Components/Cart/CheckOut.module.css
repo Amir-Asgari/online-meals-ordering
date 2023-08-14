@@ -5,6 +5,7 @@
     padding: 15px;
     border: black solid 1px;
     border-radius: 5px;
+    overflow: scroll;
 }
 .section div{
     padding: 3px;
