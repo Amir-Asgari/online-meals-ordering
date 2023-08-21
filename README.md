@@ -12,6 +12,7 @@
 + Show the Number of products On the Badge
 + calculation Total Price
 + Shipping cost calculation
++  popUp for new Meal on loading the page
 + > Favorite Page (Coming Soon)
 + > Add, Delete, Delete All Favorite products (Coming Soon)
 + > Filter Based on category (Coming Soon)
