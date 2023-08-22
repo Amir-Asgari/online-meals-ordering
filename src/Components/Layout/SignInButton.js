@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const SignInButton = () => {
+const SignInButton = (props) => {
   return (
     <div>
-      <button >Sing in</button>
+      <button
+        style={{
+          color: "white",
+          backgroundColor: "#4d1601",
+          borderRadius: 30,
+          padding: 15,
+        }}
+        onClick={props.onShownCart}
+      >
+        Sign in / Sign up
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default SignInButton
+export default SignInButton;
