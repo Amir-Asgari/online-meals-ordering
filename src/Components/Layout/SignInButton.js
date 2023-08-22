@@ -1,6 +1,10 @@
 import React from "react";
 
 const SignInButton = (props) => {
+
+    const onShownSignIn =()=>{
+        console.log("signed in");
+    }
   return (
     <div>
       <button
@@ -10,7 +14,7 @@ const SignInButton = (props) => {
           borderRadius: 30,
           padding: 15,
         }}
-        onClick={props.onShownCart}
+        onClick={onShownSignIn}
       >
         Sign in / Sign up
       </button>
