@@ -1,10 +1,8 @@
 import React from "react";
 
-const SignInButton = (props) => {
+const SignInButton = ({onShownSignIn}) => {
 
-    const onShownSignIn =()=>{
-        console.log("signed in");
-    }
+
   return (
     <div>
       <button
