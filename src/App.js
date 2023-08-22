@@ -20,9 +20,7 @@ function App() {
   const popUpCloseHandler = props => {
     setPopUp(false)
   }
-  // const popUpOpenHandler = props => {
-  //   setPopUpIsShown(true)
-  // }
+
   return (
     <CartProvider>
       {cartIsShown && <Cart onCloseCart={cartCloseHandler} />}
