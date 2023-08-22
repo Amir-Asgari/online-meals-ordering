@@ -7,7 +7,7 @@ function Meals() {
     return (
         <Fragment>
             <MealsSummary />
-            <MealsFilterButton/>
+            {/* <MealsFilterButton/> */}
             <AvailableMeals />
         </Fragment>
     )
