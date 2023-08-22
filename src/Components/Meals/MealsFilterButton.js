@@ -22,7 +22,7 @@ const MealsFilterButton = () => {
                 </header>
             </div>
             );
-}
+        
         </Card>
     )
 }
