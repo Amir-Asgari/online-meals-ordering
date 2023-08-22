@@ -73,7 +73,8 @@ function AvailableMeals() {
 
     fetchMeals().catch((error) => {
       setIsLoading(false);
-      setHttpError(error.message);
+      setHttpError('something went wrong' );
+      console.log(httpError);
     })
     // try {
     //   fetchMeals();
@@ -111,7 +112,10 @@ function AvailableMeals() {
           <ul style={{ with: "90%" }}>{Meals} </ul>
         )}
         {httpError ? (
+          <div>
           <div className={classes.httpError}> {httpError} </div>
+          <div className={classes.httpError}> <p> please connect to proxy and then check the problem </p> </div>
+          </div>
         ) : (
           null
         )}
