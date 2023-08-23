@@ -115,7 +115,7 @@ const FilterMealsHandler = event =>{
   return (
     <section>
       <Card>
-      <button onClick={()=>FilterMealsHandler('all')} >all</button>
+      <button onClick={()=>FilterMealsHandler('all')} >all meals</button>
       <button onClick={()=>FilterMealsHandler('meat')} >meat</button>
       <button onClick={()=>FilterMealsHandler('Vegetarian')} >Vegetarian</button>
 
