@@ -10,14 +10,14 @@ function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [popUp , setPopUp ]= useState(true);
 
-  const cartCloseHandler = props => {
+  const cartCloseHandler = () => {
     setCartIsShown(false)
   }
-  const cartOpenHandler = props => {
+  const cartOpenHandler = () => {
     setCartIsShown(true)
   }
 
-  const popUpCloseHandler = props => {
+  const popUpCloseHandler = () => {
     setPopUp(false)
   }
 

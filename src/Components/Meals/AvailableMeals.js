@@ -42,7 +42,8 @@ import classes from './AvailableMeals.module.css'
 function AvailableMeals() {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [httpError, setHttpError] = useState(null)
+  const [httpError, setHttpError] = useState(null);
+  const [filter, setFilter] = useState('meat');
 
   useEffect(() => {
     const fetchMeals = async () => {
@@ -65,6 +66,7 @@ function AvailableMeals() {
           description: responseData[key].description,
           price: responseData[key].price,
           image: responseData[key].image,
+          type:responseData[key].type
         });
       }
       setMeals(loadedMeals);
@@ -73,7 +75,7 @@ function AvailableMeals() {
 
     fetchMeals().catch((error) => {
       setIsLoading(false);
-      setHttpError('something went wrong' );
+      setHttpError('something went wrong');
       console.log(httpError);
     })
     // try {
@@ -91,7 +93,15 @@ function AvailableMeals() {
   //   )
   // }
 
-  const Meals = meals.map((meal) => (
+const FilterMealsHandler = event =>{
+  setFilter(event)
+}
+
+
+  const FilteredMeals = filter === "all" ? meals : meals.filter(meal => meal.type === filter)
+  console.log(meals);
+
+  const Meals = FilteredMeals.map((meal) => (
     <MealItem
       key={meal.id}
       id={meal.id}
@@ -105,6 +115,9 @@ function AvailableMeals() {
   return (
     <section>
       <Card>
+      <button onClick={()=>FilterMealsHandler('all')} >all</button>
+      <button onClick={()=>FilterMealsHandler('meat')} >meat</button>
+      <button onClick={()=>FilterMealsHandler('Vegetarian')} >Vegetarian</button>
 
         {isLoading && !httpError ? (
           <h3> is Loading ... </h3>
@@ -113,8 +126,8 @@ function AvailableMeals() {
         )}
         {httpError ? (
           <div>
-          <div className={classes.httpError}> {httpError} </div>
-          <div className={classes.httpError}> <p> please connect to proxy and then check the problem </p> </div>
+            <div className={classes.httpError}> {httpError} </div>
+            <div className={classes.httpError}> <p> please connect to proxy and then check the problem </p> </div>
           </div>
         ) : (
           null

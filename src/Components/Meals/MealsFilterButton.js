@@ -3,6 +3,24 @@
 // import Card from '../UI/Card'
 
 // const MealsFilterButton = () => {
+
+//     const [pizzas] = useState([
+//         { name: 'Margherita', toppings: ['Tomato', 'Mozzarella', 'Basil'], type: 'Vegetarian' },
+//         { name: 'Pepperoni', toppings: ['Tomato', 'Mozzarella', 'Pepperoni'], type: 'Meat' },
+//         { name: 'Hawaiian', toppings: ['Tomato', 'Mozzarella', 'Ham', 'Pineapple'], type: 'Meat' },
+//         // دیگر پیتزا‌ها
+//       ]);
+    
+//       const [filter, setFilter] = useState('all');
+    
+//       const handleFilterChange = (filterType) => {
+//         setFilter(filterType);
+//       };
+    
+//       const filteredPizzas = filter === 'all'
+//         ? pizzas
+//         : pizzas.filter(pizza => pizza.type === filter);
+
 //     return (
 //         <Card>
 
