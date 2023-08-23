@@ -13,12 +13,15 @@ const Header = (props) => {
         setShowSignUp(!showSignUp)
     }
 
+    const signUpShowHandler=()=>{
+        setShowSignUp(false)
+    }
     return (
         <Fragment>
             <header className={classes.header}>
                 <h1>ReactMeals</h1>
                 <SignInButton onShownSignIn={onShownSignIn} />
-                {showSignUp && <SignUp />}
+                {showSignUp && <SignUp onCloseCart={signUpShowHandler}/>}
                 <CustomButton onShownCart={props.onShownCart} />
             </header>
 

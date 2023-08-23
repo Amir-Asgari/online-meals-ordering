@@ -5,7 +5,6 @@ import PopFries from '../../../Assets/PopFries.jpg'
 
 const PopUp = (props) => {
     return (
-
         <Modal onCloseCart={props.onCloseCart}>
             <div className={classes.action} >
                 <div className={classes.actions}>
