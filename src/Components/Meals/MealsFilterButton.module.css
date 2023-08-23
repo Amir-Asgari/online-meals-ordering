@@ -1,0 +1,30 @@
+.section{
+    position: relative;
+    margin-top: 0rem;
+    z-index: 100;
+  }
+
+  .card {
+    padding: 1rem;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    background-color: rgb(44, 44, 44);
+    max-width: 35rem;
+    margin: 4px auto;
+  }
+  
+  
+  @media (max-width :790px) {
+    .card{
+     width: 80%;
+     font-size: 14px;
+    } 
+   }
+  
+   @media (max-width :590px) {
+    .card{
+     width: 80%;
+     font-size: 10px;
+    } 
+   }
