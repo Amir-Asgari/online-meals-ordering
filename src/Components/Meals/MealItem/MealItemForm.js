@@ -38,7 +38,7 @@ function MealItemForm(props) {
             />
             <button> + add</button>
             <div style={{marginTop:"5px"}}>
-            <MealsRating value='2'  />
+            <MealsRating value={2}  />
             </div>
             {!amountIsValid && <p style={{ color: "red" }}>please enter a valid amount (1-5).</p>}
         </form>
