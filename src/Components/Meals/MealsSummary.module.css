@@ -1,9 +1,11 @@
 .section{
   position: relative;
-  margin-top: -10rem;
+  margin-top: -15rem;
+  margin-bottom: -5rem;
   z-index: 100;
   transition: transform 1s ease-in-out ;
   animation: Section-enter 1s ease-in-out forwards;
+  direction: rtl;
 }
 
 @keyframes Section-enter {
@@ -22,7 +24,8 @@
   border-radius: 14px;
   background-color: rgb(44, 44, 44);
   max-width: 35rem;
-  margin: 4px auto;
+  margin:  auto;
+  direction: rtl;
 }
 
 
