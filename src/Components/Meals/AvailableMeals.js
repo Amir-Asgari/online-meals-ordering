@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 import classes from './AvailableMeals.module.css'
+import Spinner from "../UI/Spinner/Spinner";
 
 // import sushi from "../../Assets/sushi.jpg";
 // import pasta from "../../Assets/pasta.jpg";
@@ -48,7 +49,7 @@ function AvailableMeals() {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://react-http-23a17-default-rtdb.firebaseio.com/meals.json"
+        "https://react-http-23a17-default-rtdb.firebaseio.com/meal.json"
       );
 
       if (!response.ok) {
@@ -120,19 +121,18 @@ const FilterMealsHandler = event =>{
       <button onClick={()=>FilterMealsHandler('Vegetarian')} >Vegetarian</button>
 
         {isLoading && !httpError ? (
-          <h3> is Loading ... </h3>
+          <h3 style={{display:'flex' , justifyContent:"center"}}> <Spinner/> </h3>
         ) : (
           <ul style={{ with: "90%" }}>{Meals} </ul>
         )}
         {httpError ? (
           <div>
             <div className={classes.httpError}> {httpError} </div>
-            <div className={classes.httpError}> <p> please connect to proxy and then check the problem </p> </div>
+            <div className={classes.httpError}> <h3 style={{fontSize:'14px'}}> please connect to proxy and reload the page. </h3> </div>
           </div>
         ) : (
           null
         )}
-
       </Card>
     </section>
   );
