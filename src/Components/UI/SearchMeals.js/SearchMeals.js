@@ -9,7 +9,7 @@ export default function ComboBox(props) {
       id="combo-box-demo"
       options={props.meals}
       sx={{ width: 250 }}
-      renderInput={(params) => <TextField {...params} label="Meals" />}
+      renderInput={(params) => <TextField {...params} label="جستجو سریع" />}
     />
   );
 }
