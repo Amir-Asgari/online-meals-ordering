@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
-import classes from './AvailableMeals.module.css'
+import classes from "./AvailableMeals.module.css";
 import Spinner from "../UI/Spinner/Spinner";
+import ComboBox from "../UI/SearchMeals.js/SearchMeals";
 
 // import sushi from "../../Assets/sushi.jpg";
 // import pasta from "../../Assets/pasta.jpg";
@@ -44,16 +45,16 @@ function AvailableMeals() {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
-  const [filter, setFilter] = useState('meat');
+  const [filter, setFilter] = useState("meat");
 
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://react-http-23a17-default-rtdb.firebaseio.com/meal.json"
+        "https://react-http-23a17-default-rtdb.firebaseio.com/meals.json"
       );
 
       if (!response.ok) {
-        throw new Error('something went wrong');
+        throw new Error("something went wrong");
       }
 
       const responseData = await response.json();
@@ -67,18 +68,18 @@ function AvailableMeals() {
           description: responseData[key].description,
           price: responseData[key].price,
           image: responseData[key].image,
-          type:responseData[key].type
+          type: responseData[key].type,
         });
       }
       setMeals(loadedMeals);
-      setIsLoading(false)
+      setIsLoading(false);
     };
 
     fetchMeals().catch((error) => {
       setIsLoading(false);
-      setHttpError('something went wrong');
+      setHttpError("something went wrong");
       console.log(httpError);
-    })
+    });
     // try {
     //   fetchMeals();
     // } catch (error) {
@@ -94,12 +95,12 @@ function AvailableMeals() {
   //   )
   // }
 
-const FilterMealsHandler = event =>{
-  setFilter(event)
-}
+  const FilterMealsHandler = (event) => {
+    setFilter(event);
+  };
 
-
-  const FilteredMeals = filter === "all" ? meals : meals.filter(meal => meal.type === filter)
+  const FilteredMeals =
+    filter === "all" ? meals : meals.filter((meal) => meal.type === filter);
   console.log(meals);
 
   const Meals = FilteredMeals.map((meal) => (
@@ -112,27 +113,40 @@ const FilterMealsHandler = event =>{
       image={meal.image}
     />
   ));
+  const searchMealsItems = [Meals.name]
+  console.log(searchMealsItems);
 
   return (
     <section>
       <Card>
-      <button onClick={()=>FilterMealsHandler('all')} >all meals</button>
-      <button onClick={()=>FilterMealsHandler('meat')} >meat</button>
-      <button onClick={()=>FilterMealsHandler('Vegetarian')} >Vegetarian</button>
-
+        <div className={classes.buttonGroup}>
+          <button onClick={() => FilterMealsHandler("all")}>all meals</button>
+          <button onClick={() => FilterMealsHandler("meat")}>meat</button>
+          <button onClick={() => FilterMealsHandler("Vegetarian")}>
+            Vegetarian
+          </button>
+          <ComboBox meals={Meals} />
+        </div>
         {isLoading && !httpError ? (
-          <h3 style={{display:'flex' , justifyContent:"center"}}> <Spinner/> </h3>
+          <h3 style={{ display: "flex", justifyContent: "center" }}>
+            {" "}
+            <Spinner />{" "}
+          </h3>
         ) : (
           <ul style={{ with: "90%" }}>{Meals} </ul>
         )}
         {httpError ? (
           <div>
             <div className={classes.httpError}> {httpError} </div>
-            <div className={classes.httpError}> <h3 style={{fontSize:'14px'}}> please connect to proxy and reload the page. </h3> </div>
+            <div className={classes.httpError}>
+              {" "}
+              <h3 style={{ fontSize: "14px" }}>
+                {" "}
+                please connect to proxy and reload the page.{" "}
+              </h3>{" "}
+            </div>
           </div>
-        ) : (
-          null
-        )}
+        ) : null}
       </Card>
     </section>
   );
