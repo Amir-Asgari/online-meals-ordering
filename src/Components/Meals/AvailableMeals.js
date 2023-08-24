@@ -119,10 +119,10 @@ function AvailableMeals() {
       <Card>
         <div className={classes.buttonGroup}>
           <button onClick={() => FilterMealsHandler("all")}>همه</button>
-          <button onClick={() => FilterMealsHandler("meat")}>گوشت</button>
+          <button onClick={() => FilterMealsHandler("pizza")}>پیتزا</button>
           <button onClick={() => FilterMealsHandler("sandwich")}>ساندویچ</button>
-          <button style={{ marginRight: '10px' }} onClick={() => FilterMealsHandler("Vegetarian")}>
-            سبزیجات
+          <button style={{ marginRight: '10px' }} onClick={() => FilterMealsHandler("salad")}>
+            سالاد
           </button>
           <ComboBox meals={FilteredMeals.map(meal => meal.name)} />
         </div>
