@@ -45,7 +45,7 @@ function AvailableMeals() {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
-  const [filter, setFilter] = useState("meat");
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     const fetchMeals = async () => {
@@ -113,19 +113,18 @@ function AvailableMeals() {
       image={meal.image}
     />
   ));
-  const searchMealsItems = [Meals.name]
-  console.log(searchMealsItems);
 
   return (
     <section>
       <Card>
         <div className={classes.buttonGroup}>
-          <button onClick={() => FilterMealsHandler("all")}>all meals</button>
-          <button onClick={() => FilterMealsHandler("meat")}>meat</button>
-          <button onClick={() => FilterMealsHandler("Vegetarian")}>
+          <button onClick={() => FilterMealsHandler("all")}>All meals</button>
+          <button onClick={() => FilterMealsHandler("meat")}>Meat</button>
+          <button onClick={() => FilterMealsHandler("sandwich")}>Sandwich</button>
+          <button style={{ marginRight: '10px' }} onClick={() => FilterMealsHandler("Vegetarian")}>
             Vegetarian
           </button>
-          <ComboBox meals={Meals} />
+          <ComboBox meals={FilteredMeals.map(meal => meal.name)} />
         </div>
         {isLoading && !httpError ? (
           <h3 style={{ display: "flex", justifyContent: "center" }}>
