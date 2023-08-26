@@ -12,7 +12,7 @@ const Cart = (props) => {
 
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `تومان${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
@@ -61,10 +61,10 @@ const Cart = (props) => {
     <React.Fragment>
       {cartItem}
       <div className={classes.total}>
-        <span>Total Amount</span>
+        <span>قیمت کل</span>
         <span>{totalAmount}</span>
       </div>
-      {!hasItems && <h3 style={{ color: "red" }}>There is no item to order</h3>}
+      {!hasItems && <h3 style={{ color: "red" }}>هیچ آیتمی برای سفارش وجود ندارد</h3>}
       {isOrdering && hasItems && (
         <CheckOut onConfirm={submitOrderHandler} onCancel={props.onCloseCart} />
       )}
@@ -74,11 +74,11 @@ const Cart = (props) => {
             className={classes["button--alt"]}
             onClick={props.onCloseCart}
           >
-            Close
+            بستن
           </button>
           {hasItems && (
             <button className={classes.button} onClick={hideOrderButtonHandler}>
-              Order
+              سفارش
             </button>
           )}
         </div>
@@ -89,12 +89,12 @@ const Cart = (props) => {
   return (
     <Modal onCloseCart={props.onCloseCart}>
       {!isSubmitting && !isSubmitted && submittingForm}
-      {isSubmitting && !isSubmitted && <p> Sending order data... </p>}
+      {isSubmitting && !isSubmitted && <p> در حال ارسال اطلاعات ... </p>}
       {isSubmitted && (
         <div className={classes.actions} >
-          <p>Successfully sent the order !</p>
+          <p>سفارش با موفقیت ثبت شد </p>
           <button className={classes.button} onClick={props.onCloseCart}>
-            Close
+            بستن
           </button>
         </div>
       )}
