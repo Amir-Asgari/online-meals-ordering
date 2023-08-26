@@ -11,5 +11,6 @@ function Meals() {
         </Fragment>
     )
 }
+console.log('meals');
 
 export default Meals

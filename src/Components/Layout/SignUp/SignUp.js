@@ -79,6 +79,7 @@ const SignUp = (props) => {
           <a href="#">ورود</a>
           <button type="submit"> ثبت نام</button>
           <button
+          href="/"
             className={classes["button--alt"]}
             onClick={props.onCloseCart}
           >

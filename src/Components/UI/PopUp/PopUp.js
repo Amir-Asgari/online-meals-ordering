@@ -16,7 +16,7 @@ const PopUp = (props) => {
                         بستن
                     </button>
                 </div>
-                <img src={PopFries} />
+                <img src={PopFries} alt='new pop fries' />
             </div>
         </Modal>
     )
