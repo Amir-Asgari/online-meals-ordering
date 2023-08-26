@@ -1,10 +1,12 @@
 .branch {
     text-align: center;
+    color: white;
 }
 
 .store-locations {
     list-style: none;
     padding: 0;
+    color: white;
 }
 
 .store-locations li {
@@ -15,3 +17,47 @@
 .store-locations li:hover {
     font-size: 18px;
 }
+.section{
+    position: relative;
+    margin-top: -15rem;
+    margin-bottom: -5rem;
+    z-index: 100;
+    transition: transform 1s ease-in-out ;
+    animation: Section-enter 1s ease-in-out forwards;
+    direction: rtl;
+  }
+  
+  @keyframes Section-enter {
+    0% {
+      transform: translateY(30%);
+    }
+    
+    100% {
+      transform: translateY(5%);
+    }
+  }
+  .card {
+    padding: 1rem;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    background-color: rgb(44, 44, 44);
+    max-width: 35rem;
+    margin:  auto;
+    direction: rtl;
+  }
+  
+  
+  @media (max-width :790px) {
+    .card{
+     width: 80%;
+     font-size: 14px;
+    } 
+   }
+  
+   @media (max-width :590px) {
+    .card{
+     width: 80%;
+     font-size: 10px;
+    } 
+   }

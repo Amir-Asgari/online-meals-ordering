@@ -6,6 +6,7 @@ import Cart from "./../src/Components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 import AboutUs from "./Components/Layout/Header/AboutUs";
 import PopUp from "./Components/UI/PopUp/PopUp";
+import Branches from "./Components/Layout/Header/Branches";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -23,25 +24,19 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
       <CartProvider>
         <Header onShownCart={cartOpenHandler} />
         {popUp && <PopUp onCloseCart={popUpCloseHandler} />}
         {cartIsShown && <Cart onCloseCart={cartCloseHandler} />}
-          <Meals cartIsShown={cartIsShown} popUp={popUp} />
+          
         <Routes>
-          <Route path="/about" element={<AboutUs />} />
-          {/* <Route
-            path="/"
-            element={
-              // <main>
-              //</main>
-            }
-          /> */}
+          <Route path="/" element={<Meals cartIsShown={cartIsShown} popUp={popUp} />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/Branches" element={<Branches />} />
+
         </Routes>
       </CartProvider>
-    </BrowserRouter>
-    // npm install react-router-dom
+  
 
     // <CartProvider>
     //   {cartIsShown && <Cart onCloseCart={cartCloseHandler} />}

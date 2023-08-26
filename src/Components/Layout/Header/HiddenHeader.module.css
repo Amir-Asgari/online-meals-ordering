@@ -1,26 +1,31 @@
 .header {
-    position: fixed;
-    top: 130px;
-    left: 0;
-    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
     height: 40px;
-    background-color: #f1f1f1;
-    padding: 10px;
+    padding: 1px;
     box-sizing: border-box;
     transition: opacity 0.3s ease-out;
     z-index:1120;
 }
 
-.header-button {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 5px 10px;
-    background-color: #ccc;
-    border: none;
+.header ul{
+    list-style: none;
     color: #fff;
+}
+.header li {
+    display: inline-block;
+    margin-right: 2px;
+    padding: 10px;
+    background-color: rgb(77, 22, 1);
+    border: none;
+
+    border-radius: 30px;
 }
 
 /* Optional styles for the header buttons */
-.header-button:hover {
+.header li:hover {
     background-color: #555;
 }
