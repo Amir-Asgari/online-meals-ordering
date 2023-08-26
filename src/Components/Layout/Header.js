@@ -22,6 +22,13 @@ const Header = (props) => {
                 <h1> سایت سفارش غذا</h1>
                 <SignInButton onShownSignIn={onShownSignIn} />
                 {showSignUp && <SignUp onCloseCart={signUpShowHandler} />}
+                <div>
+                    <ul>
+                        <li> <link to='/' >اصلی</link></li>
+                        <li> <link to='/aboutUs' >درباره ما</link></li>
+                        <li> <link to='/branches' >شعبه ها</link></li>
+                    </ul>
+                </div>
                 <CustomButton onShownCart={props.onShownCart} />
             </header>
 
