@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
+// import {
+//   Link,
+// } from "react-router-dom";
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import CustomizedBadges from './CustomizedBadges'
@@ -41,9 +44,11 @@ export default function CustomButton(props) {
   return (
     <Stack direction="row" spacing={1} className={btnClass}>
       <ThemeProvider theme={theme}>
+
         <Button style={{ backgroundColor: "#4d1601", borderRadius: 30, padding: 10 }} onClick={props.onShownCart} variant="secondary" endIcon={<CustomizedBadges />}>
           سبد خرید
         </Button>
+
       </ThemeProvider>
     </Stack>
   );
