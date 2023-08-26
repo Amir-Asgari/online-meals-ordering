@@ -8,12 +8,12 @@ const PopUp = (props) => {
         <Modal onCloseCart={props.onCloseCart}>
             <div className={classes.action} >
                 <div className={classes.actions}>
-                    <p>New Meal</p>
+                    <p>میان وعده جدید</p>
                     <button
                         className={classes["button--alt"]}
                         onClick={props.onCloseCart}
                     >
-                        Close
+                        بستن
                     </button>
                 </div>
                 <img src={PopFries} />

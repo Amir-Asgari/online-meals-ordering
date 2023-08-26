@@ -17,19 +17,17 @@ const SignUp = (props) => {
     } else {
       setData({ ...data, [event.target.name]: event.target.value });
     }
-    console.log(data);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("load");
   };
 
   return (
     <Modal onCloseCart={props.onCloseCart}>
       <form onSubmit={submitHandler} className={classes.action}>
         <div>
-          <label htmlFor="name">name</label>
+          <label htmlFor="name">نام و نام خانوادگی</label>
           <input
             type="text"
             id="name"
@@ -39,7 +37,7 @@ const SignUp = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="email">email</label>
+          <label htmlFor="email">ایمیل</label>
           <input
             type="email"
             id="email"
@@ -49,7 +47,7 @@ const SignUp = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="password">password</label>
+          <label htmlFor="password">رمز عبور</label>
           <input
             type="password"
             id="password"
@@ -59,7 +57,7 @@ const SignUp = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="confirmPassword">confirmPassword</label>
+          <label htmlFor="confirmPassword">تایید رمز عبور</label>
           <input
             type="password"
             id="confirmPassword"
@@ -69,7 +67,7 @@ const SignUp = (props) => {
           />
         </div>
         <div>
-          <label>I accept terms of privacy policy</label>
+          <label>قوانین را خواندم و قبول دارم </label>
           <input
             type="checkbox"
             name="iAccepted"
@@ -78,13 +76,13 @@ const SignUp = (props) => {
           />
         </div>
         <div>
-          <a href="#">login</a>
-          <button type="submit"> SignUp</button>
+          <a href="#">ورود</a>
+          <button type="submit"> ثبت نام</button>
           <button
             className={classes["button--alt"]}
             onClick={props.onCloseCart}
           >
-            Close
+            بستن
           </button>
         </div>
       </form>

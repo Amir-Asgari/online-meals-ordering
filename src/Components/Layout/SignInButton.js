@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignInButton = ({onShownSignIn}) => {
+const SignInButton = ({ onShownSignIn }) => {
 
 
   return (
@@ -14,7 +14,7 @@ const SignInButton = ({onShownSignIn}) => {
         }}
         onClick={onShownSignIn}
       >
-        Sign in / Sign up
+        ورود / ثبت نام
       </button>
     </div>
   );

@@ -1,83 +1,113 @@
 .meal {
+  /* font-family: IRANSansMobile; */
   display: flex;
   justify-content: space-between;
   width: 90%;
-  max-width: 45rem;
+  max-width: 35rem;
   margin: 1rem;
   padding-bottom: 1rem;
-  padding-right: 10%;
+  /* padding-right: 1%; */
   border-bottom: 1px solid #ccc;
 }
 
 .meal h3 {
+  display: flex !important;
   margin: 0 0 0.25rem 0;
+  direction: rtl;
 }
 
 .description {
   font-style: italic;
+  direction: inherit;
+  /* padding-left: 25%; */
+  font-size: 12px;
+  text-align: initial;
+  /* max-width: 100%; */
 }
 
 .price {
   margin-top: 0.25rem;
   font-weight: bold;
   color: #ad5502;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
-.imageItems{
-  margin-right: -100px;
+
+.imageItems {
+  flex-grow: 1
 }
-.image{
-  display: block;
+
+.mealItemForm {
+  flex-grow: 4
+}
+
+.para {
+  margin: 0 15px 0 15px;
+  flex-grow: 1;
+  direction: rtl;
+}
+
+.image {
+  /* display: block; */
   width: 100px;
   height: 100px;
   border-radius: 2px;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease-in-out  ;
+  transition: all 0.2s ease-in-out;
 }
-.image:hover{
+
+.image:hover {
   scale: 120%;
   border-radius: 5px;
 }
-@media (max-width :790px) {
-  .meal{
-   width: auto;
-   padding-right: 10%;
-   font-size: small;
-   margin-left: -1rem;
-   margin-right: -1rem;
-  } 
-  .meal h3 {
-   font-size: small;
- }
- .price {
-   font-size: 0.7rem;
- }
- .imageItems{
-  margin-right: -50px;
-}
- }
 
- @media (max-width :590px) {
-  .meal{
-   width: auto;
-  font-size: smaller;
-  } 
+@media (max-width :790px) {
+  .meal {
+    width: auto;
+    padding-right: 10%;
+    font-size: small;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
   .meal h3 {
-    font-size: smaller;
+    font-size: 18px;
   }
-  .description {
-    font-size:10px;
-  }
+
   .price {
     font-size: 0.7rem;
   }
-  .imageItems{
+
+  .imageItems {
+    margin-right: -50px;
+  }
+}
+
+@media (max-width :590px) {
+  .meal {
+    width: auto;
+    font-size: 16px;
+  }
+
+  .meal h3 {
+    font-size: 14px;
+    padding-left: 15%;
+  }
+
+  .description {
+    font-size: 10px;
+  }
+
+  .price {
+    font-size: 0.7rem;
+  }
+
+  .imageItems {
     margin-right: -20px;
   }
-  .image{
+
+  .image {
     width: 60px;
     height: 60px;
   }
- }
- 
+}

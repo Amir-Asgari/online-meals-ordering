@@ -26,7 +26,7 @@ function MealItemForm(props) {
         <form className={classes.form} onSubmit={submitHandler}>
             <Input
                 ref={amountInputRef}
-                label='Amount'
+                label='تعداد'
                 input={{
                     id: 'amount',
                     type: 'number',
@@ -36,11 +36,11 @@ function MealItemForm(props) {
                     defaultValue: '1'
                 }}
             />
-            <button> + add</button>
-            <div style={{marginTop:"5px"}}>
-            <MealsRating value={2}  />
+            <button> +  افزودن </button>
+            <div style={{ marginTop: "5px" }}>
+                <MealsRating value={2} />
             </div>
-            {!amountIsValid && <p style={{ color: "red" }}>please enter a valid amount (1-5).</p>}
+            {!amountIsValid && <p style={{ color: "red" }}>لطفا یک مقدار معتبر وارد کنید (1-5)</p>}
         </form>
     )
 }
