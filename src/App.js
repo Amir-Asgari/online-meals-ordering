@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate  } from "react-router-dom";
 import Header from "./Components/Layout/Header";
 import Meals from "./Components/Meals/Meals";
 import Cart from "./../src/Components/Cart/Cart";
@@ -24,31 +24,23 @@ function App() {
   };
 
   return (
-      <CartProvider>
-        <Header onShownCart={cartOpenHandler} />
-        {popUp && <PopUp onCloseCart={popUpCloseHandler} />}
-        {cartIsShown && <Cart onCloseCart={cartCloseHandler} />}
-          
-        <Routes>
-          <Route path="/" element={<Meals cartIsShown={cartIsShown} popUp={popUp} />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/Branches" element={<Branches />} />
+    <CartProvider>
+      <Header onShownCart={cartOpenHandler} />
+      {popUp && <PopUp onCloseCart={popUpCloseHandler} />}
+      {cartIsShown && <Cart onCloseCart={cartCloseHandler} />}
 
-        </Routes>
-      </CartProvider>
-  
+      <Routes>
+      <Route path="/" element={<Navigate to="/Home" />} />
+        <Route
+          path="/Home"
+          element={<Meals cartIsShown={cartIsShown} popUp={popUp} />}
+        />
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/Branches" element={<Branches />} />
+      </Routes>
+    </CartProvider>
 
-    // <CartProvider>
-    //   {cartIsShown && <Cart onCloseCart={cartCloseHandler} />}
-    //   {popUp && <PopUp onCloseCart={popUpCloseHandler} />}
-    //   <Header onShownCart={cartOpenHandler} />
-    //   <main>
-    //     <Meals />
-    //   </main>
-    //   <AboutUs/>
-    // </CartProvider>
   );
 }
 
 export default App;
-// "start": "react-scripts --openssl-legacy-provider start",
