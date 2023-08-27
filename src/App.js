@@ -30,13 +30,14 @@ function App() {
       {cartIsShown && <Cart onCloseCart={cartCloseHandler} />}
 
       <Routes>
-      <Route path="/" element={<Navigate to="/Home" />} />
+      <Route path="/*" element={<Navigate to="/Home" />} />
         <Route
           path="/Home"
           element={<Meals cartIsShown={cartIsShown} popUp={popUp} />}
         />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/Branches" element={<Branches />} />
+
       </Routes>
     </CartProvider>
 
