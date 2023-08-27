@@ -65,44 +65,44 @@ const CheckOut = (props) => {
         <div className={classes.name}>
           <input
             ref={nameInputRef}
-            placeholder="your name"
+            placeholder="نام و نام خانوادگی"
             id="name"
             type="text"
           />
-          <label htmlFor="name"> your name</label>
-          {!formInputValidity.name && <p className={classes.error} >please enter a valid name</p>}
+          <label htmlFor="name"> نام و نام خانوادگی</label>
+          {!formInputValidity.name && <p className={classes.error} >لطفا نام معتبر وارد کنید </p>}
         </div>
         <div className={classes.name}>
           <input
             ref={streetInputRef}
-            placeholder="street"
+            placeholder="آدرس"
             id="street"
             type="text"
           />
-          <label htmlFor="street"> street</label>
-          {!formInputValidity.street && <p className={classes.error} >please enter a valid street</p>}
+          <label htmlFor="street"> خیابان</label>
+          {!formInputValidity.street && <p className={classes.error}  >نام خیابان را وارد کنید  </p>}
         </div>
         <div className={classes.name}>
-          <input ref={cityInputRef} placeholder="city" id="city" type="text" />
-          <label htmlFor="city"> city</label>
-          {!formInputValidity.city && <p className={classes.error} >please enter a valid city</p>}
+          <input ref={cityInputRef} placeholder="شهر" id="city" type="text" />
+          <label htmlFor="city"> شهر</label>
+          {!formInputValidity.city && <p className={classes.error} >نام شهر را وارد کنید </p>}
         </div>
         <div className={classes.name}>
           <input
             ref={postalCodeInputRef}
-            placeholder="postal code"
+            placeholder="کد پستی"
             id="postal-code"
             type="number"
           />
-          <label htmlFor="postal-code"> postal code</label>
-          {!formInputValidity.postalCode && <p className={classes.error} >please enter a valid postalCode </p>}
+          <label htmlFor="postal-code"> کد پستی</label>
+          {!formInputValidity.postalCode && <p className={classes.error} >لطفا کد پستی معتبر وارد کنید </p>}
         </div>
         <div className={classes.buttons}>
           <button onClick={props.onCancel} className={classes.cancelButton}>
             {" "}
-            cancel
+            لغو
           </button>
-          <button className={classes.submitButton}> submit</button>
+          <button className={classes.submitButton}> ثبت </button>
         </div>
       </section>
     </form>
