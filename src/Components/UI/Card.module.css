@@ -10,6 +10,7 @@
   margin:  auto;
   transition: transform 1s ease-in-out 1s;
   animation: card-enter 1s ease-in-out forwards;
+  z-index: 200;
 }
 
 @keyframes card-enter {

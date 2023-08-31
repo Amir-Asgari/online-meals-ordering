@@ -25,7 +25,9 @@ const Header = (props) => {
         <Fragment>
             <div style={{ backgroundColor: "#FFF", padding: "0.5rem" }}>
                 <header className={classes.header}>
-                    <h1 component={Link} to='/'> سایت سفارش غذا</h1>
+                    <Link style={{textDecoration:'none' , color:'white'}} to='/' >
+                    <h1  > سایت سفارش غذا</h1>
+                    </Link>
                     <SignInButton onShownSignIn={onShownSignIn} />
                     {showSignUp && <SignUp onCloseCart={signUpShowHandler} />}
                     <CustomButton onShownCart={props.onShownCart} />

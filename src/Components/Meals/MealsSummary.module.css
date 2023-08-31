@@ -2,7 +2,7 @@
   position: relative;
   margin-top: -15rem;
   margin-bottom: -5rem;
-  z-index: 100;
+  z-index: 90;
   transition: transform 1s ease-in-out ;
   animation: Section-enter 1s ease-in-out forwards;
   direction: rtl;

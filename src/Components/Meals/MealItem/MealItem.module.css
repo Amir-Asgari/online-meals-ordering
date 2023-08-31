@@ -33,7 +33,11 @@
 }
 
 .imageItems {
-  flex-grow: 1
+  display: flex;
+  flex-grow: 2;
+    width: 100px !important;
+  height: 100px !important;
+
 }
 
 .mealItemForm {
@@ -47,9 +51,8 @@
 }
 
 .image {
-  /* display: block; */
-  width: 100px;
-  height: 100px;
+  display: block;
+  overflow: hidden;
   border-radius: 2px;
   align-items: center;
   justify-content: center;

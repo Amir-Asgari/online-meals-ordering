@@ -46,6 +46,7 @@ function AvailableMeals() {
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
   const [filter, setFilter] = useState("all");
+  const [SelectedMeal, setSelectedMeal] = useState()
 
   useEffect(() => {
     const fetchMeals = async () => {
@@ -78,7 +79,6 @@ function AvailableMeals() {
     fetchMeals().catch((error) => {
       setIsLoading(false);
       setHttpError("something went wrong");
-      console.log(httpError);
     });
     // try {
     //   fetchMeals();
@@ -101,7 +101,6 @@ function AvailableMeals() {
 
   const FilteredMeals =
     filter === "all" ? meals : meals.filter((meal) => meal.type === filter);
-  console.log(meals);
 
   const Meals = FilteredMeals.map((meal) => (
     <MealItem
@@ -114,8 +113,13 @@ function AvailableMeals() {
     />
   ));
 
+  const handleChange =(event , newValue)=>{
+    setSelectedMeal(newValue);
+    console.log(SelectedMeal);
+  }
+
   return (
-    <section>
+    <section className={classes.section} >
       <Card>
         <div className={classes.buttonGroup}>
           <button onClick={() => FilterMealsHandler("all")}>همه</button>
@@ -124,7 +128,7 @@ function AvailableMeals() {
           <button style={{ marginRight: '10px' }} onClick={() => FilterMealsHandler("salad")}>
             سالاد
           </button>
-          <ComboBox meals={FilteredMeals.map(meal => meal.name)} />
+          <ComboBox meals={FilteredMeals.map(meal => meal.name)}  handleChange={handleChange}/>
         </div>
         {isLoading && !httpError ? (
           <h3 style={{ display: "flex", justifyContent: "center" }}>
@@ -136,6 +140,7 @@ function AvailableMeals() {
         )}
         {httpError ? (
           <div>
+            <div>{SelectedMeal}</div>
             <div className={classes.httpError}> {httpError} </div>
             <div className={classes.httpError}>
               {" "}
