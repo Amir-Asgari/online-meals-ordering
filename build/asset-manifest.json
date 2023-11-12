@@ -1,15 +1,15 @@
 {
-  "main.css": "/static/css/main.e5a7a328.chunk.css",
-  "main.js": "/static/js/main.a39fac57.chunk.js",
-  "main.js.map": "/static/js/main.a39fac57.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.9a164d65.chunk.js": "/static/js/2.9a164d65.chunk.js",
-  "static/js/2.9a164d65.chunk.js.map": "/static/js/2.9a164d65.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.b041eea3da20b9326ba13336db9d0c1d.js": "/precache-manifest.b041eea3da20b9326ba13336db9d0c1d.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.e5a7a328.chunk.css.map": "/static/css/main.e5a7a328.chunk.css.map",
-  "static/media/PopFries.jpg": "/static/media/PopFries.7cba210c.jpg",
-  "static/media/meals.jpg": "/static/media/meals.55c74990.jpg"
+  "files": {
+    "main.css": "/static/css/main.d149e015.css",
+    "main.js": "/static/js/main.142d65ba.js",
+    "static/media/meals.jpg": "/static/media/meals.2971f633fc1382581cbf.jpg",
+    "static/media/PopFries.jpg": "/static/media/PopFries.e245ddd40d40c4626364.jpg",
+    "index.html": "/index.html",
+    "main.d149e015.css.map": "/static/css/main.d149e015.css.map",
+    "main.142d65ba.js.map": "/static/js/main.142d65ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d149e015.css",
+    "static/js/main.142d65ba.js"
+  ]
 }
