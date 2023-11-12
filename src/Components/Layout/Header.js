@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom'
 import mealsPic from './../../Assets/meals.jpg';
 import classes from './../Layout/Header.module.css';
@@ -25,8 +25,8 @@ const Header = (props) => {
         <Fragment>
             <div style={{ backgroundColor: "#FFF", padding: "0.5rem" }}>
                 <header className={classes.header}>
-                    <Link style={{textDecoration:'none' , color:'white'}} to='/' >
-                    <h1  > سایت سفارش غذا</h1>
+                    <Link style={{ textDecoration: 'none', color: 'white' }} to='/' >
+                        <h1  > سایت سفارش غذا</h1>
                     </Link>
                     <SignInButton onShownSignIn={onShownSignIn} />
                     {showSignUp && <SignUp onCloseCart={signUpShowHandler} />}
@@ -50,7 +50,7 @@ const Header = (props) => {
                         درباره ما
                     </Button>
                     <Button
-                        style={{ backgroundColor: "#4d1601", borderRadius: 10,paddingTop: '10px', textDecoration: "none" }}
+                        style={{ backgroundColor: "#4d1601", borderRadius: 10, paddingTop: '10px', textDecoration: "none" }}
                         variant="secondary"
                         component={Link}
                         to='/Branches'
