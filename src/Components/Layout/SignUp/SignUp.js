@@ -6,7 +6,7 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
 import classes from "./SignUp.module.css";
-import axio
+import axios from "axios";
 
 const SignUp = (props) => {
   const [data, setData] = useState({
@@ -19,6 +19,7 @@ const SignUp = (props) => {
   });
 
   const changeHandler = (event) => {
+    console.log(event);
     if (event.target.name === "iAccepted") {
       setData({ ...data, [event.target.name]: event.target.checked });
     } else {
@@ -26,21 +27,44 @@ const SignUp = (props) => {
     }
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
+    console.log(event);
+    await fetch(
+      "https://react-http-23a17-default-rtdb.firebaseio.com/users.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          userData: data,
+          name: data.name,
+        }),
+      }
+    ).then((res) => console.log(res));
+  };
+
+  const signUpHandler = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(
+        "https://react-http-23a17-default-rtdb.firebaseio.com/users.json",
+        {
+          userData: data,
+          data: data.name
+        }
+      );
+      console.log( ' signUp' , response);
+    } catch (error) {
+      console.log("Error", error);
+    }
   };
 
   return (
     <Modal onCloseCart={props.onCloseCart}>
-          <div>
-            <Button
-              color="error"
-              variant="outlined"
-              onClick={props.onCloseCart}
-            >
-              بستن
-            </Button>
-          </div>
+      <div>
+        <Button color="error" variant="outlined" onClick={props.onCloseCart}>
+          بستن
+        </Button>
+      </div>
       <form onSubmit={submitHandler} className={classes.textField}>
         <Box
           component="form"
@@ -98,12 +122,13 @@ const SignUp = (props) => {
 
         <div>
           <div>
-            <Button variant="contained">ورود</Button>
+            <Button type="submit" onClick={signUpHandler} variant="contained">
+              ثبت نام
+            </Button>
             <Button type="submit" variant="contained">
-              ثبت نام{" "}
+              ورود
             </Button>
           </div>
-      
         </div>
       </form>
     </Modal>
