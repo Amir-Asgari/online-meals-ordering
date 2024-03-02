@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import Modal from "../../UI/Modal";
-import classes from "../../UI/Modal.module.css";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Button from "@mui/material/Button";
+import classes from "./SignUp.module.css";
+import axio
 
 const SignUp = (props) => {
   const [data, setData] = useState({
@@ -8,6 +14,7 @@ const SignUp = (props) => {
     email: "",
     password: "",
     confirmPassword: "",
+    checkbox: false,
     iAccepted: false,
   });
 
@@ -25,66 +32,78 @@ const SignUp = (props) => {
 
   return (
     <Modal onCloseCart={props.onCloseCart}>
-      <form onSubmit={submitHandler} className={classes.action}>
-        <div>
-          <label htmlFor="name">نام و نام خانوادگی</label>
-          <input
-            type="text"
+          <div>
+            <Button
+              color="error"
+              variant="outlined"
+              onClick={props.onCloseCart}
+            >
+              بستن
+            </Button>
+          </div>
+      <form onSubmit={submitHandler} className={classes.textField}>
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "100%" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
             id="name"
+            label="نام و نام خانوادگی"
+            variant="outlined"
             name="name"
             value={data.name}
             onChange={changeHandler}
           />
-        </div>
-        <div>
-          <label htmlFor="email">ایمیل</label>
-          <input
-            type="email"
+          <TextField
             id="email"
+            label="ایمیل"
+            variant="outlined"
             name="email"
             value={data.email}
             onChange={changeHandler}
           />
-        </div>
-        <div>
-          <label htmlFor="password">رمز عبور</label>
-          <input
-            type="password"
+          <TextField
             id="password"
+            label="رمز عبور"
+            variant="outlined"
             name="password"
             value={data.password}
             onChange={changeHandler}
           />
-        </div>
-        <div>
-          <label htmlFor="confirmPassword">تایید رمز عبور</label>
-          <input
-            type="password"
+          <TextField
             id="confirmPassword"
+            label="تایید رمز عبور"
+            variant="outlined"
             name="confirmPassword"
             value={data.confirmPassword}
             onChange={changeHandler}
           />
-        </div>
-        <div>
-          <label>قوانین را خواندم و قبول دارم </label>
-          <input
-            type="checkbox"
-            name="iAccepted"
-            value={data.checkbox}
-            onChange={changeHandler}
+          <FormControlLabel
+            required
+            control={
+              <Checkbox
+                {...data.checkbox}
+                name="iAccepted"
+                value={data.checkbox}
+                onChange={changeHandler}
+              />
+            }
+            label="قوانین را خواندم و قبول دارم "
           />
-        </div>
+        </Box>
+
         <div>
-          <a href="#">ورود</a>
-          <button type="submit"> ثبت نام</button>
-          <button
-          href="/"
-            className={classes["button--alt"]}
-            onClick={props.onCloseCart}
-          >
-            بستن
-          </button>
+          <div>
+            <Button variant="contained">ورود</Button>
+            <Button type="submit" variant="contained">
+              ثبت نام{" "}
+            </Button>
+          </div>
+      
         </div>
       </form>
     </Modal>
