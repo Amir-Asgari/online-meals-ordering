@@ -45,7 +45,7 @@ export default function CustomButton(props) {
     <Stack direction="row" spacing={1} className={btnClass}>
       <ThemeProvider theme={theme}>
 
-        <Button style={{ backgroundColor: "#4d1601", borderRadius: 30, padding: 10 }} onClick={props.onShownCart} variant="secondary" endIcon={<CustomizedBadges />}>
+        <Button style={{ backgroundColor: "#4d1601", borderRadius: 5, padding: 5 }} onClick={props.onShownCart} variant="secondary" endIcon={<CustomizedBadges />}>
           سبد خرید
         </Button>
 

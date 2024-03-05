@@ -5,42 +5,6 @@ import classes from "./AvailableMeals.module.css";
 import Spinner from "../UI/Spinner/Spinner";
 import ComboBox from "../UI/SearchMeals.js/SearchMeals";
 
-// import sushi from "../../Assets/sushi.jpg";
-// import pasta from "../../Assets/pasta.jpg";
-// import fish from "../../Assets/fish-and-chips.jpg";
-// import past from "../../Assets/pasta.jpg";
-
-// const Dummy_meals = [
-//   {
-//     id: "m1",
-//     name: "Sushi",
-//     description: "Finest fish and veggies",
-//     price: 22.99,
-//     image:sushi,
-//   },
-//   {
-//     id: "m2",
-//     name: "Schnitzel",
-//     description: "A german specialty!",
-//     price: 16.5,
-//     image: pasta,
-//   },
-//   {
-//     id: "m3",
-//     name: "Sushi2",
-//     description: "Finest fish and veggies",
-//     price: 22.99,
-//     image:fish ,
-//   },
-//   {
-//     id: "m4",
-//     name: "Schnitzel3",
-//     description: "A german specialty!",
-//     price: 16.5,
-//     image:sushi,
-//   },
-// ];
-
 function AvailableMeals() {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -80,21 +44,7 @@ function AvailableMeals() {
       setIsLoading(false);
       setHttpError("something went wrong");
     });
-    // try {
-    //   fetchMeals();
-    // } catch (error) {
-    //   setIsLoading(false)
-    //   setHttpError(error.massage)
-    // }
   }, []);
-  // if (httpError) {
-  //   return (
-  //     <section>
-  //       <p>{httpError}</p>
-  //     </section>
-  //   )
-  // }
-
   const FilterMealsHandler = (event) => {
     setFilter(event);
   };
@@ -132,8 +82,7 @@ function AvailableMeals() {
         </div>
         {isLoading && !httpError ? (
           <h3 style={{ display: "flex", justifyContent: "center" }}>
-            {" "}
-            <Spinner />{" "}
+            <Spinner />
           </h3>
         ) : (
           <ul style={{ with: "90%" }}>{Meals} </ul>
@@ -143,11 +92,9 @@ function AvailableMeals() {
             <div>{SelectedMeal}</div>
             <div className={classes.httpError}> {httpError} </div>
             <div className={classes.httpError}>
-              {" "}
               <h3 style={{ fontSize: "14px" }}>
-                {" "}
                 please connect to proxy and reload the page.{" "}
-              </h3>{" "}
+              </h3>
             </div>
           </div>
         ) : null}
