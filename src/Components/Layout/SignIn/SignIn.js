@@ -8,21 +8,12 @@ import axios from "axios";
 
 const SignIn = (props) => {
   const [data, setData] = useState({
-    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
-    checkbox: false,
-    iAccepted: false,
   });
 
   const changeHandler = (event) => {
-    console.log(event);
-    if (event.target.name === "iAccepted") {
-      setData({ ...data, [event.target.name]: event.target.checked });
-    } else {
       setData({ ...data, [event.target.name]: event.target.value });
-    }
   };
 
   const submitHandler = async (event) => {
