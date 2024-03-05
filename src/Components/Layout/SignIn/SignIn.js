@@ -16,22 +16,9 @@ const SignIn = (props) => {
       setData({ ...data, [event.target.name]: event.target.value });
   };
 
-  const submitHandler = async (event) => {
-    event.preventDefault();
-    console.log(event);
-    await fetch(
-      "https://react-http-23a17-default-rtdb.firebaseio.com/users.json",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          userData: data,
-          name: data.name,
-        }),
-      }
-    ).then((res) => console.log(res));
-  };
+  
 
-  const signUpHandler = async (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.post(
@@ -40,8 +27,11 @@ const SignIn = (props) => {
           userData: data,
           data: data.name
         }
-      );
-      console.log( ' signUp' , response);
+        );
+        if(response){
+          props.onCloseCart()
+        }
+      console.log( ' signIn' , response);
     } catch (error) {
       console.log("Error", error);
     }

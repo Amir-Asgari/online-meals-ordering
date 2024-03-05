@@ -52,6 +52,9 @@ const SignUp = (props) => {
           data: data.name,
         }
       );
+      if (response) {
+        props.onCloseCart();
+      }
       console.log(" signUp", response);
     } catch (error) {
       console.log("Error", error);
@@ -61,7 +64,7 @@ const SignUp = (props) => {
   return (
     <Modal onCloseCart={props.onCloseCart}>
       <div>
-        <Button color="error" variant="outlined" onClick={props.onCloseCart} >
+        <Button color="error" variant="outlined" onClick={props.onCloseCart}>
           بستن
         </Button>
       </div>
@@ -122,7 +125,11 @@ const SignUp = (props) => {
 
         <div>
           <div>
-            <Button type="submit"  variant="contained" style={{ backgroundColor: "rgb(77, 22, 1)" }}>
+            <Button
+              type="submit"
+              variant="contained"
+              style={{ backgroundColor: "rgb(77, 22, 1)" }}
+            >
               ثبت نام
             </Button>
           </div>
