@@ -1,0 +1,8 @@
+.textField {
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 46px;
+  }

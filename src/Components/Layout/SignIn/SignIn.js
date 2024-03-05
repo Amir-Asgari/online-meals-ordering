@@ -5,10 +5,10 @@ import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
-import classes from "./SignUp.module.css";
+import classes from "./SignIn.module.css";
 import axios from "axios";
 
-const SignUp = (props) => {
+const SignIn = (props) => {
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -19,7 +19,7 @@ const SignUp = (props) => {
   });
 
   const changeHandler = (event) => {
-    // console.log(event);
+    console.log(event);
     if (event.target.name === "iAccepted") {
       setData({ ...data, [event.target.name]: event.target.checked });
     } else {
@@ -27,32 +27,32 @@ const SignUp = (props) => {
     }
   };
 
-  // const submitHandler = async (event) => {
-  //   event.preventDefault();
-  //   console.log(event);
-  //   await fetch(
-  //     "https://react-http-23a17-default-rtdb.firebaseio.com/users.json",
-  //     {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         userData: data,
-  //         name: data.name,
-  //       }),
-  //     }
-  //   ).then((res) => console.log(res));
-  // };
-
   const submitHandler = async (event) => {
+    event.preventDefault();
+    console.log(event);
+    await fetch(
+      "https://react-http-23a17-default-rtdb.firebaseio.com/users.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          userData: data,
+          name: data.name,
+        }),
+      }
+    ).then((res) => console.log(res));
+  };
+
+  const signUpHandler = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.post(
         "https://react-http-23a17-default-rtdb.firebaseio.com/users.json",
         {
           userData: data,
-          data: data.name,
+          data: data.name
         }
       );
-      console.log(" signUp", response);
+      console.log( ' signUp' , response);
     } catch (error) {
       console.log("Error", error);
     }
@@ -61,7 +61,7 @@ const SignUp = (props) => {
   return (
     <Modal onCloseCart={props.onCloseCart}>
       <div>
-        <Button color="error" variant="outlined" onClick={props.onCloseCart} >
+        <Button color="error" variant="outlined" onClick={props.onCloseCart}>
           بستن
         </Button>
       </div>
@@ -74,14 +74,7 @@ const SignUp = (props) => {
           noValidate
           autoComplete="off"
         >
-          <TextField
-            id="name"
-            label="نام و نام خانوادگی"
-            variant="outlined"
-            name="name"
-            value={data.name}
-            onChange={changeHandler}
-          />
+
           <TextField
             id="email"
             label="ایمیل"
@@ -98,32 +91,14 @@ const SignUp = (props) => {
             value={data.password}
             onChange={changeHandler}
           />
-          <TextField
-            id="confirmPassword"
-            label="تایید رمز عبور"
-            variant="outlined"
-            name="confirmPassword"
-            value={data.confirmPassword}
-            onChange={changeHandler}
-          />
-          <FormControlLabel
-            required
-            control={
-              <Checkbox
-                {...data.checkbox}
-                name="iAccepted"
-                value={data.checkbox}
-                onChange={changeHandler}
-              />
-            }
-            label="قوانین را خواندم و قبول دارم "
-          />
+
+
         </Box>
 
         <div>
           <div>
-            <Button type="submit"  variant="contained" style={{ backgroundColor: "rgb(77, 22, 1)" }}>
-              ثبت نام
+            <Button type="submit" variant="contained" style={{ backgroundColor: "rgb(77, 22, 1)" }}>
+              ورود
             </Button>
           </div>
         </div>
@@ -132,4 +107,4 @@ const SignUp = (props) => {
   );
 };
 
-export default SignUp;
+export default SignIn;

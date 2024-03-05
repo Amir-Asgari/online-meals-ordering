@@ -33,3 +33,11 @@
   object-fit: cover;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
 }
+
+.routeButton{
+  background-color: #4d1601;
+  border-radius: 10;
+  padding-top: 10px;
+  text-decoration: none;
+  margin-right: 10px;
+}
