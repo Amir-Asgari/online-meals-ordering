@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Modal from "../../UI/Modal";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
 import classes from "./SignIn.module.css";
 import axios from "axios";
