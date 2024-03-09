@@ -13,7 +13,7 @@ const MealsRating = (props) => {
         >
 
             {/* <Typography component="legend">Read only</Typography> */}
-            <Rating name="read-only" value={props.value} readOnly />
+            <Rating name="read-only" value={props.value} readOnly  precision={0.1}  />
 
         </Box>
     );

@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "axios": "^1.6.7",
+    "firebase": "^10.8.1",
     "react": "^17.0.1",
     "react-complex-filter": "^0.1.2",
     "react-dom": "^17.0.1",

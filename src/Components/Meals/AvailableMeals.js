@@ -4,26 +4,26 @@ import MealItem from "./MealItem/MealItem";
 import classes from "./AvailableMeals.module.css";
 import Spinner from "../UI/Spinner/Spinner";
 import ComboBox from "../UI/SearchMeals.js/SearchMeals";
+import axios from "axios";
 
 function AvailableMeals() {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
   const [filter, setFilter] = useState("all");
-  const [SelectedMeal, setSelectedMeal] = useState()
+  const [SelectedMeal, setSelectedMeal] = useState();
 
   useEffect(() => {
-    const fetchMeals = async () => {
-      const response = await fetch(
-        "https://react-http-23a17-default-rtdb.firebaseio.com/meals.json"
-      );
+    fetchMeals()
 
-      if (!response.ok) {
-        throw new Error("something went wrong");
-      }
+  }, []);
 
-      const responseData = await response.json();
-
+  const fetchMeals = async () => {
+    const response = await axios.get(
+      "https://react-http-23a17-default-rtdb.firebaseio.com/meals.json"
+    );
+    try {
+      const responseData = response.data;
       const loadedMeals = [];
 
       for (const key in responseData) {
@@ -34,17 +34,16 @@ function AvailableMeals() {
           price: responseData[key].price,
           image: responseData[key].image,
           type: responseData[key].type,
+          rating:responseData[key].rating,
         });
       }
       setMeals(loadedMeals);
       setIsLoading(false);
-    };
-
-    fetchMeals().catch((error) => {
+    } catch (error) {
       setIsLoading(false);
       setHttpError("something went wrong");
-    });
-  }, []);
+    }
+  };
   const FilterMealsHandler = (event) => {
     setFilter(event);
   };
@@ -60,25 +59,34 @@ function AvailableMeals() {
       description={meal.description}
       price={meal.price}
       image={meal.image}
+      rating={meal.rating}
     />
   ));
 
-  const handleChange =(event , newValue)=>{
+  const handleChange = (event, newValue) => {
     setSelectedMeal(newValue);
     console.log(SelectedMeal);
-  }
+  };
 
   return (
-    <section className={classes.section} >
+    <section className={classes.section}>
       <Card>
         <div className={classes.buttonGroup}>
           <button onClick={() => FilterMealsHandler("all")}>همه</button>
           <button onClick={() => FilterMealsHandler("pizza")}>پیتزا</button>
-          <button onClick={() => FilterMealsHandler("sandwich")}>ساندویچ</button>
-          <button style={{ marginRight: '10px' }} onClick={() => FilterMealsHandler("salad")}>
+          <button onClick={() => FilterMealsHandler("sandwich")}>
+            ساندویچ
+          </button>
+          <button
+            style={{ marginRight: "10px" }}
+            onClick={() => FilterMealsHandler("salad")}
+          >
             سالاد
           </button>
-          <ComboBox meals={FilteredMeals.map(meal => meal.name)}  handleChange={handleChange}/>
+          <ComboBox
+            meals={FilteredMeals.map((meal) => meal.name)}
+            handleChange={handleChange}
+          />
         </div>
         {isLoading && !httpError ? (
           <h3 style={{ display: "flex", justifyContent: "center" }}>
