@@ -5,7 +5,7 @@ import classes from "./../Layout/Header.module.css";
 import style from "../../Components/Layout/Header/HiddenHeader.module.css";
 import CustomButton from "./CustomButton";
 import SignUp from "./SignUp/SignUp";
-import SignIn from './SignIn/SignIn'
+import SignIn from "./SignIn/SignIn";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
@@ -34,10 +34,20 @@ const Header = (props) => {
             <h1> سایت سفارش غذا</h1>
           </Link>
           <Stack spacing={2} direction="row">
-            <Button onClick={onShownSignIn} variant="contained" style={{ backgroundColor: "rgb(77, 22, 1)" }}>
+            <Button
+              className={classes.button}
+              onClick={onShownSignIn}
+              variant="contained"
+              style={{ backgroundColor: "rgb(77, 22, 1)" }}
+            >
               ورود
             </Button>
-            <Button onClick={onShownSignUp} variant="contained" style={{ backgroundColor: "rgb(77, 22, 1)" }}>
+            <Button
+              className={classes.button}
+              onClick={onShownSignUp}
+              variant="contained"
+              style={{ backgroundColor: "rgb(77, 22, 1)" }}
+            >
               ثبت نام
             </Button>
           </Stack>
@@ -46,19 +56,16 @@ const Header = (props) => {
           {ShowSignIn && <SignIn onCloseCart={signInShowHandler} />}
           <CustomButton onShownCart={props.onShownCart} />
         </header>
-        <div className={style.header}>
-          <Button
-          className={classes.routeButton}
- 
-            variant="secondary"
-            component={Link}
-            to="/"
-          >
-            صفحه اصلی
-          </Button>
-          <Button
-            className={classes.routeButton}
+        <div className={classes.nav}>
 
+          <Button
+            style={{
+              backgroundColor: "#4d1601",
+              borderRadius: "10px",
+              paddingTop: "10px",
+              textDecoration: "none",
+              marginRight: "10px",
+            }}
             variant="secondary"
             component={Link}
             to="/aboutUs"
@@ -66,13 +73,33 @@ const Header = (props) => {
             درباره ما
           </Button>
           <Button
-             className={classes.routeButton}
-
+            style={{
+              backgroundColor: "#4d1601",
+              borderRadius: "10px",
+              paddingTop: "10px",
+              textDecoration: "none",
+              marginRight: "10px",
+            }}
             variant="secondary"
             component={Link}
             to="/Branches"
           >
             شعبه ها
+          </Button>
+          <Button
+            className={classes.routeButton}
+            style={{
+              backgroundColor: "#4d1601",
+              borderRadius: "10px",
+              paddingTop: "10px",
+              textDecoration: "none",
+              marginRight: "10px",
+            }}
+            variant="secondary"
+            component={Link}
+            to="/"
+          >
+            صفحه اصلی
           </Button>
         </div>
       </div>
