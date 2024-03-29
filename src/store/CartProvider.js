@@ -1,6 +1,8 @@
 import React, { useReducer, useEffect, useRef, useState } from "react";
 import CartContext from "./cart-context";
 import axios from "axios";
+// import { db } from "./FireBase";
+import { Query, collection } from "firebase/firestore";
 // import firebase from "./firebase";
 
 const defaultCartState = {
@@ -82,34 +84,63 @@ const CartProvider = (props) => {
     defaultCartState
   );
 
+  useEffect(() => {
+    fetchCartData();
+  }, []);
+
   const idCounter = useRef(0); // ایجاد شمارنده با استفاده از useRef
 
   const fetchCartData = async (item, id) => {
     try {
-        const newItem = { ...item, id: id };
+      const newItem = { ...item, id: id };
 
       const response = await axios.get(
-        `https://react-http-23a17-default-rtdb.firebaseio.com/orders/${userName}/orderedItems/${newItem.name}.json`,
+        `https://react-http-23a17-default-rtdb.firebaseio.com/orders/${userName}/orderedItems.json`
       );
       const responseData = response.data;
+      let deletedItem = undefined;
+      for (const userKey in responseData.orders) {
+        for (const itemKey in responseData.orders[userKey].orderedItems) {
+          console.log(responseData.orders[userKey].orderedItems);
+          if (itemKey.startsWith("-")) {
+            console.log('log');
+            deletedItem = responseData.orders[userKey].orderedItems[itemKey];
+            if (deletedItem) {
+              delete responseData.orders[userKey].orderedItems[itemKey];
+              console.log(`آیتم با آی دی ${itemKey} با موفقیت حذف شد.`);
+            } else {
+              console.log(`آیتم با آی دی ${itemKey} پیدا نشد.`);
+            }
+          }
+        }
+      }
+      
+
+      console.log(deletedItem);
       console.log(response.data);
       console.log(responseData);
-      if (responseData.orderedItems && responseData.user) {
+      if (responseData.orderedItems) {
         dispatchCartAction({ type: "UPDATE", data: responseData });
       } else {
         console.log("داده‌های مورد نیاز برای بروزرسانی سبد خرید موجود نیست.");
+      }
+
+      for (const key in responseData) {
+        if (responseData.hasOwnProperty(key)) {
+          responseData[key] = responseData[key];
+        }
       }
     } catch (error) {
       console.log("خطا دریافت دیتا از سرور", error);
     }
   };
-  const addItemToCartHandler = async (item, id) => {
+  const addItemToCartHandler = async (item) => {
     try {
-      const newItem = { ...item, id: id };
+      const newItem = { ...item };
       console.log(newItem);
       console.log(newItem.id);
       const response = await axios.post(
-        `https://react-http-23a17-default-rtdb.firebaseio.com/orders/${userName}/orderedItems/:${newItem.name}.json`,
+        `https://react-http-23a17-default-rtdb.firebaseio.com/orders/${userName}/orderedItems.json`,
         { ...newItem }
       );
 
