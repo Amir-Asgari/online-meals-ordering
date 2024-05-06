@@ -12,6 +12,7 @@ const defaultCartState = {
 
 const cartReducer = (state, action) => {
   if (action.type === "UPDATE") {
+    
     return {
       items: action.data.items,
       totalAmount: action.data.totalAmount,
